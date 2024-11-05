@@ -5,3 +5,5 @@ for (let transaction of transactions) {
     }
     console.log("Processing transaction:", transaction);
 }
+
+

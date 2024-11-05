@@ -1,0 +1,67 @@
+loops:
+
+1.handling repetitive tasks.
+2. execute a block of code repeatedly as long as a specified condition remains true. 
+
+
+for-loop:  (if you know how many iterations you need to perform)
+
+for (initialization; testing condition; increment/decrement) {
+    statement(s)
+}
+
+while loop: 
+--->when you don't know the number of iterations in advance
+-->entry control loop-checks condition first and executes the statement
+
+while (boolean condition) {
+    loop statements...
+}
+
+
+do-while: (exit control loop-it checks for the condition after executing the statements)
+
+do {
+    Statements...
+}
+while (condition);
+
+
+for-in loop: 
+
+--->Iterates over the keys or properties of an object -including arrays 
+--->For arrays, it loops over the index values,
+---> Best suited for iterating over the properties of an object or the indices of an array.
+
+for(let variable_name in object_name) {
+    // Statement
+}
+
+
+for-of loop:
+---> Iterates over the values of an iterable (like arrays, strings, maps, sets, etc.)
+--->It directly accesses the value of each element rather than its index or key.
+--->Best suited for iterating over arrays, strings, or any iterable where you care about the values themselves.
+
+
+for(let variable_name of  object_name) {
+    // Statement
+}
+
+
+
+forEach:
+-->The forEach method in JavaScript is an array method used to iterate over the elements of an array.
+
+
+eg:
+const numbers = [10, 20, 30, 40];
+
+numbers.forEach(function(value) {
+  console.log(value);
+});
+// Output:
+// 10
+// 20
+// 30
+// 40
