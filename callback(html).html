@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Enter Name:</h2>
+    <form id="userForm">
+        <label for="name"> Name:</label>
+        <input type="text" id="name">
+        <button type="submit" >submit</button>
+    </form>
+
+    <p id="greetingMsg"></p>
+
+    <script>
+        
+    function displayGreeting(names){
+        var val=document.getElementById("greetingMsg")
+        val.textContent=`hai,${names}! welcome`;
+    }
+
+      function handleFormSubmit(event,callback)
+    {
+        event.preventDefault();     
+        const name=document.getElementById("name").value;
+        callback(name)
+    }
+
+       document.getElementById("userForm").addEventListener('submit',function(event){
+        handleFormSubmit(event,displayGreeting);
+           
+       })
+
+    </script>
+    
+</body>
+
+</html>
+
