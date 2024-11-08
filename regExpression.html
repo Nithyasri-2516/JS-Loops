@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation with Regex</title>
+    <script>
+        // Function to validate the form fields using regex
+        function validateForm() {
+            // Get the values of the form inputs
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const phone = document.getElementById("phone").value;
+
+            // Email validation regex (simple version)
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false; // Prevent form submission
+            }
+
+            // Password validation regex (at least one lowercase, one uppercase, one number, one special char, and 8 characters)
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+            if (!passwordRegex.test(password)) {
+                alert("Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
+                return false; // Prevent form submission
+            }
+
+            // Phone number validation regex (simple US phone number format)
+            const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Phone number must be in the format (XXX) XXX-XXXX.");
+                return false; // Prevent form submission
+            }
+
+            // If all validations pass, allow the form to submit
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form onsubmit="return validateForm()" action="/submit-form" method="POST">
+        <!-- Email Field -->
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <br><br>
+
+        <!-- Password Field -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+
+        <!-- Phone Number Field -->
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required placeholder="(XXX) XXX-XXXX">
+        <br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
