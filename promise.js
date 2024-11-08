@@ -1,9 +1,9 @@
 //fullfilled, rejected , pending (state)
 
-const mypromise= new Promise((resolve,reject)=>
+const promise= new Promise((resolve,reject)=>
 {
     const err= false;
-    if(!err){
+    if(err){
         resolve("this is solved")
     }
     else{
@@ -11,4 +11,13 @@ const mypromise= new Promise((resolve,reject)=>
     }
 })
 
-console.log(mypromise);
+console.log(promise);
+
+promise.then(value=>{  //thennables
+    console.log(value);
+    
+})
+promise.catch((err)=>{
+  console.log(err);
+
+});
